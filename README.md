@@ -21,9 +21,10 @@ Incremental Development: You can start with a fully functional and tested CPU ve
     cd build/Debug 
     
     # All commands in build/Debug
-    cmake ../.. -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug
+    cmake ../.. -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug -DUSE_CUDA=OFF
+    OR
+    cmake ../.. -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug -DUSE_CUDA=ON
     
-    cmake -B build . -DUSE_CUDA=OFF
     cmake --build .
 
     OR

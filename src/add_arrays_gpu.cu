@@ -1,5 +1,6 @@
 #include "add_arrays.h"
 #include <cuda_runtime.h>
+#include <cstdio>
 
 __global__ void add_kernel(const float* a, const float* b, float* result, size_t size) {
     int idx = threadIdx.x + blockIdx.x * blockDim.x;
@@ -9,6 +10,7 @@ __global__ void add_kernel(const float* a, const float* b, float* result, size_t
 }
 
 void add_arrays(const float* a, const float* b, float* result, size_t size) {
+    printf("I am running on a GPU\n");
     float *d_a, *d_b, *d_result;
     size_t bytes = size * sizeof(float);
 

@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 option(USE_CUDA "Enable CUDA support" OFF)
 
 if(USE_CUDA)
+    set(CMAKE_CUDA_ARCHITECTURES 89)
     enable_language(CUDA)
     message(STATUS "CUDA enabled")
     set(SOURCES
