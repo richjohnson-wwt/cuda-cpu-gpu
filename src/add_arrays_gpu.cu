@@ -5,7 +5,8 @@
 __global__ void add_kernel(const float* a, const float* b, float* result, size_t size) {
     int idx = threadIdx.x + blockIdx.x * blockDim.x;
     if (idx < size) {
-        result[idx] = a[idx] + b[idx];
+        // result[idx] = a[idx] + b[idx];
+        result[idx] = add_op(a[idx], b[idx]);
     }
 }
 
